@@ -145,7 +145,8 @@ public class CitizenView implements View
         else
         {
             System.out.println("Podane dane są nieprawidłowe!");
-            inputData(true);
+            if(newData)inputData(true);
+            else inputData(false);
         }
     }
 }

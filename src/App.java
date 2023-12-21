@@ -82,7 +82,16 @@ public class App implements Application
 
     public int createAccount(long PESEL, String password)
     {
-        login.createAccount(PESEL, password);
+        if(!login.checkPesel(PESEL) && checkPassword(password))
+        {
+            login.createAccount(PESEL, password);
+            return 1;
+        }
         return 0;
+    }
+
+    public  boolean checkPassword(String password)
+    {
+        return password.length() >= 8;
     }
 }

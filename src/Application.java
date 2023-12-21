@@ -29,4 +29,5 @@ public interface Application
     ArrayList<Record> showData(Record criteria);
     boolean changeData(long PESEL, Record record, boolean newData);
     int createAccount(long PESEL, String password);
+    boolean checkPassword(String password);
 }

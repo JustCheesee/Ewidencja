@@ -85,9 +85,9 @@ public class App implements Application
         if(!login.checkPesel(PESEL) && checkPassword(password))
         {
             login.createAccount(PESEL, password);
-            return 1;
+            return 0;
         }
-        return 0;
+        return 1;
     }
 
     public  boolean checkPassword(String password)

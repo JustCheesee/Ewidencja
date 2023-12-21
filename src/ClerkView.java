@@ -59,6 +59,14 @@ public class ClerkView extends CitizenView implements View
         System.out.println("Haslo: ");
         String haslo = br.readLine();
 
-        app.createAccount(PESEL, haslo);
+        //1 - PESEL already exists or password is too short
+        if(app.createAccount(PESEL, haslo) == 1)
+        {
+            System.out.println("Konto nie zostało utworzone");
+        }
+        else
+        {
+            System.out.println("Konto zostało utworzone");
+        }
     }
 }
